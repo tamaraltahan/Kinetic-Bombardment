@@ -8,13 +8,11 @@ public class PlayerController : MonoBehaviour
     public float lerpSpeed;
     public float attackTimer = 0.25f;
     float attackCD;
-    public WeaponSO weapon;
-    List<WeaponSO> weapons;
+
     // Start is called before the first frame update
     void Start()
     {
         bod = GetComponent<Rigidbody2D>();
-        weapons = new List<WeaponSO>(); //initialize a list of weapons
 
     }
 

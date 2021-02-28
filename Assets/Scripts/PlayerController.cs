@@ -9,9 +9,19 @@ public class PlayerController : MonoBehaviour
     public float attackTimer = 0.25f;
     float attackCD;
 
+    weaponType activeWeapon;
+    public List<int> maxAmmoList;
+    List<int> currentAmmoList;
+    public enum weaponType
+    {
+        standard,
+        bounce
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
         bod = GetComponent<Rigidbody2D>();
 
     }
@@ -21,7 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         //face the mouse cursor
         Vector2 direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.deltaTime * lerpSpeed);
 
 

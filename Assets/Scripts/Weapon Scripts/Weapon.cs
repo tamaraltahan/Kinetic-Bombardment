@@ -2,29 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponParent : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
-    public string projName;
-    public int maxAmmo;
-    public int currentAmmo;
     //GameObject obj;
-    Rigidbody2D bod;
+    protected Rigidbody2D bod;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        //obj = GetComponent<GameObject>();
-        bod = GetComponent<Rigidbody2D>();
-        currentAmmo = maxAmmo;
-    }
+    //protected virtual void Start()
+    //{
+    //    bod = GetComponent<Rigidbody2D>();
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected abstract void Awake();
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         //Break the object if it hits a wall;
         if (collision.CompareTag("Wall"))

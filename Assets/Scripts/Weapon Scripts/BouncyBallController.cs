@@ -35,7 +35,7 @@ public class BouncyBallController : MonoBehaviour
         }
 
         //if a boss weak point is hit, deal damage, but dont destroy the projectile
-        if (collision.gameObject.CompareTag("BossWeakPoint"))
+        if (collision.gameObject.CompareTag("BossWeakSpot"))
         {
             //collsion.GetComponent<EnemyController>().takeDamage(damage);
         }

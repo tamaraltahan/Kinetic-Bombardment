@@ -30,7 +30,7 @@ public abstract class Weapon : MonoBehaviour
             Destroy(gameObject);
         }
         //if it hits a boss weakspot
-        if (collision.CompareTag("BossWeakPoint"))
+        if (collision.CompareTag("BossWeakSpot"))
         {
             //will enable this when enemy controller script is live with a takeDamage(int n) functions
             //collision.GetComponent<EnemyController>().takeDamage(damage);
@@ -38,4 +38,10 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
+
+    protected virtual void Disable()
+    {
+        //gameObject.SetActive(false);
+        Destroy(gameObject);
+    }
 }

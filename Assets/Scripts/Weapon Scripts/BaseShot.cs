@@ -8,11 +8,12 @@ public class BaseShot : Weapon
 
     protected override void Awake()
     {
-        bod = GetComponentInChildren<Rigidbody2D>();
+        bod = GetComponent<Rigidbody2D>();
     }
 
     protected void OnEnable()
     {
-        bod.AddForce(Vector3.forward * speed);
+        bod.AddForce(transform.right * speed);
+        Invoke("Disable", 5f);
     }
 }

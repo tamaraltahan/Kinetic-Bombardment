@@ -8,12 +8,13 @@ public class BounceShot : Weapon
     protected override void Awake()
     {
         bod = GetComponent<Rigidbody2D>();
-        bod.gravityScale = 1;
+        //bod.gravityScale = 1;
     }
 
     private void OnEnable()
     {
-        bod.AddForce(Vector3.forward * speed);
+        bod.AddForce(transform.right * speed);
+        Invoke("Disable", 5f);
     }
 
     // Update is called once per frame

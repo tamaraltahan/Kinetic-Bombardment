@@ -13,36 +13,18 @@ public class PlayerController : MonoBehaviour
     //experimenting with weapon switching
     //using this as a template, but not verbatim, since its missing some features like ammo, which we will have to set on a level to level basis.
     //https://answers.unity.com/questions/1775103/2d-weapon-switching-1.html
-    weaponType activeWeapon;
-    public List<int> maxAmmoList = new List<int>();
-    List<int> currentAmmoList = new List<int>();
-
-    List<weaponType> weaponsList = new List<weaponType>(); //maybe will do active weapons vs all weapons (?)
-
-    GameObject weaponObj; //this needs to be set somehow :/
-
-    
-    public enum weaponType
-    {
-        standard,
-        bounce
-    }
-    //
+    public List<GameObject> weaponsList = new List<GameObject>();
+    int currentIndex = 0;
+    GameObject currentWeapon;
+    public GameObject spawnObject;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentWeapon = weaponsList[0];
         bod = GetComponent<Rigidbody2D>(); // set the active body
     }
 
-    void setAmmo()
-    {
-        //for each weapon in the list, set current ammo to max ammo
-        for (int i = 0; i < maxAmmoList.Count; ++i)
-        {
-            currentAmmoList[i] = maxAmmoList[i];
-        }
-    }
 
     // Update is called once per frame
     void Update()
@@ -59,15 +41,14 @@ public class PlayerController : MonoBehaviour
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0)
         {
-            if (scroll > 0) scrollWeaponUp();
+            if (scroll > 0) ScrollWeaponUp();
             else
-                scrollWeaponDown();
-
+                ScrollWeaponDown();
         }
 
         if (Input.GetMouseButtonDown(0) && attackCD <= 0)
         {
-            shoot(weaponObj);
+            Shoot(currentWeapon);
         }
         //decrement the attack cooldown
         if (attackCD > 0) attackCD -= Time.deltaTime;
@@ -75,34 +56,41 @@ public class PlayerController : MonoBehaviour
     }
 
     //to do
-    void scrollWeaponUp()
+    void SelectWeapon(int index)
     {
-
+        currentWeapon = weaponsList[index];
     }
-    void scrollWeaponDown()
+    void ScrollWeaponUp()
     {
-
+        int nextIndex;
+        if(currentIndex == 0)
+        {
+            nextIndex = weaponsList.Count - 1;
+        }
+        else
+        {
+            nextIndex = ++currentIndex;
+        }
+        SelectWeapon(nextIndex);
+    }
+    void ScrollWeaponDown()
+    {
+        int nextIndex;
+        if (currentIndex == 0)
+        {
+            nextIndex = 0;
+        }
+        else
+        {
+            nextIndex = --currentIndex;
+        }
+        SelectWeapon(nextIndex);
     }
 
-    void shoot(GameObject pewpew)
+    void Shoot(GameObject pewpew)
     {
-        Instantiate(pewpew, transform.position, Quaternion.identity);
+        Instantiate(pewpew, spawnObject.transform.position, spawnObject.transform.rotation);
         attackCD = attackTimer;
     }
 
-    void selectWeapon(weaponType weapon)
-    {
-        switch (weapon)
-        {
-            case weaponType.standard:
-                activeWeapon = weaponType.standard;
-                //weaponObj = something
-                break;
-            case weaponType.bounce:
-                activeWeapon = weaponType.bounce;
-                break;
-            default:
-                break;
-        }
-    }
 }

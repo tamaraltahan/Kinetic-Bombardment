@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class BounceShot : Weapon
 {
+    public int MaxBounces;
+    int currBounces = 0;
     public float speed;
+    Vector2 lastVel;
     protected override void Awake()
     {
         bod = GetComponent<Rigidbody2D>();
@@ -14,12 +17,36 @@ public class BounceShot : Weapon
     private void OnEnable()
     {
         bod.AddForce(transform.right * speed);
-        Invoke("Disable", 5f);
+        Invoke("Disable", 3f);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        lastVel = bod.velocity; //for obtaining bouncing normal vectors
     }
+
+    protected override void OnCollisionEnter2D(Collision2D collision)
+    {
+        //limit the set of bounces
+        currBounces++;
+        if(currBounces == MaxBounces)
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            float speed = lastVel.magnitude;
+            Vector2 dir = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
+            bod.velocity = dir * Mathf.Max(speed, 0f);
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("BossWeakSpot"))
+        {
+            //todo
+        }
+    }
+
 }

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float lerpSpeed;
     public float attackTimer = 0.25f;
     float attackCD;
+    public GameController controller;
 
 
     //experimenting with weapon switching
@@ -46,20 +47,29 @@ public class PlayerController : MonoBehaviour
                 ScrollWeaponDown();
         }
 
-        if (Input.GetMouseButtonDown(0) && attackCD <= 0)
+        if (Input.GetMouseButtonDown(0) && attackCD <= 0) //left click & cd <= 0
         {
-            Shoot(currentWeapon);
+            if (gameObject.GetComponent<Weapon>().ammo > 0)
+            {
+                Shoot(currentWeapon);
+                --gameObject.GetComponent<Weapon>().ammo; //shoot one shot
+            }
+            else
+            {
+                controller.noAmmo();
+            }
         }
         //decrement the attack cooldown
         if (attackCD > 0) attackCD -= Time.deltaTime;
 
     }
 
-    //to do
     void SelectWeapon(int index)
     {
         currentWeapon = weaponsList[index];
     }
+
+    //select next weapon based on scroll wheel (does not roll over - as in you have to scroll back down to get the 1st weapon)
     void ScrollWeaponUp()
     {
         int nextIndex;
@@ -90,7 +100,7 @@ public class PlayerController : MonoBehaviour
     void Shoot(GameObject pewpew)
     {
         Instantiate(pewpew, spawnObject.transform.position, spawnObject.transform.rotation);
-        attackCD = attackTimer;
+        attackCD = attackTimer; //resets cooldown for attacks
     }
 
 }

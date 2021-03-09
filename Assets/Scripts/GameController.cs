@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     private void countEnemies()
     {
         numEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;//count all objects with "enemy" tag
-        if (GameObject.FindGameObjectWithTag("Boss")) //set boos boolean if we can find an object with the tag
+        if (GameObject.FindGameObjectWithTag("Boss")) //set boos boolean if we find an object with the tag
         {
             isBossALive = true;
         }

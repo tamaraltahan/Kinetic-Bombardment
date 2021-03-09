@@ -6,7 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     //This is here so it can be used in other scripts since its public. 
     //If another scipt uses it, it will be affected by the pasuing and unpausing if implemented to do so
-    public static bool GameIsPaused = false;
+    public  bool GameIsPaused = false;
 
     //Makes it so the pasue menu can actually be affected when the right gameobject is placed back in Unity.
     public GameObject pauseMenuUI;

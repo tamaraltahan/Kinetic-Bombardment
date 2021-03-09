@@ -4,14 +4,8 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    //GameObject obj;
     protected Rigidbody2D bod;
-
-    // Start is called before the first frame update
-    //protected virtual void Start()
-    //{
-    //    bod = GetComponent<Rigidbody2D>();
-    //}
+    public int ammo;
 
     protected abstract void Awake();
 

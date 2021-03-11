@@ -12,16 +12,23 @@ public class GameController : MonoBehaviour
 
 
     public PlayerController player;
-    int numAllAmmo = 0;
+    public int numAllAmmo = 0;
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < player.weaponsList.Count; ++i)
+        numAllAmmo = countAmmo();
+        loadAmmo();
+    }
+
+    private int countAmmo()
+    {
+        int curAmmo = 0;
+        for (int i = 0; i < player.weaponsList.Count; ++i)
         {
-            int curAmmo = player.weaponsList[i].GetComponent<Weapon>().ammo;
+            curAmmo += player.weaponsList[i].GetComponent<Weapon>().ammo;
             numAllAmmo += curAmmo;
         }
-        loadAmmo();
+        return curAmmo;
     }
 
     private void countEnemies()
@@ -58,17 +65,18 @@ public class GameController : MonoBehaviour
     //gotta get some scene managemenet here
     private void lose()
     {
-        Debug.Log("Pog");
+        //Debug.Log("Haha idiot loser");
     }
 
     private void win()
     {
-        Debug.Log("Haha idiot loser");
+        //Debug.Log("Pog");
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             if (!pauser.GameIsPaused)
@@ -87,7 +95,6 @@ public class GameController : MonoBehaviour
         {
             lose();
         }
-        
-
     }
+
 }

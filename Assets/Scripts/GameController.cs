@@ -13,23 +13,30 @@ public class GameController : MonoBehaviour
 
     public PlayerController player;
     public int numAllAmmo = 0;
+    public int AmmoLoader;// make this a public int. That way when you load a new scene you can set this int to whatever you want.  Customizable starting ammo ;)
     // Start is called before the first frame update
     void Start()
     {
-        numAllAmmo = countAmmo();
         loadAmmo();
     }
-
-    private int countAmmo()
+    private void countAmmo()
     {
         int curAmmo = 0;
         for (int i = 0; i < player.weaponsList.Count; ++i)
         {
             curAmmo += player.weaponsList[i].GetComponent<Weapon>().ammo;
-            numAllAmmo += curAmmo;
         }
-        return curAmmo;
+        numAllAmmo = curAmmo;
     }
+    public void loadAmmo()//you can call this from other scripts to reload your wepapon at the beginning of the scene.
+    {
+        for (int i = 0; i < player.weaponsList.Count; ++i)
+        {
+            player.weaponsList[i].GetComponent<Weapon>().ammo = AmmoLoader;
+        }
+        countAmmo();
+    }
+
 
     private void countEnemies()
     {
@@ -37,14 +44,6 @@ public class GameController : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Boss")) //set boos boolean if we find an object with the tag
         {
             isBossALive = true;
-        }
-    }
-
-    void loadAmmo()
-    {
-        for(int i = 0; i < player.weaponsList.Count; ++i)
-        {
-            player.weaponsList[i].GetComponent<Weapon>().ammo = 10;
         }
     }
 

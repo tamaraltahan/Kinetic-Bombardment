@@ -928,6 +928,7 @@ MonoBehaviour:
   ammoText: {fileID: 1338281933}
   player: {fileID: 411408915}
   numAllAmmo: 0
+  AmmoLoader: 10
 --- !u!4 &1530126873
 Transform:
   m_ObjectHideFlags: 0

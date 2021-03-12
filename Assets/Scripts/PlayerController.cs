@@ -34,8 +34,9 @@ public class PlayerController : MonoBehaviour
         Vector2 direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.deltaTime * lerpSpeed);
+        //
 
-
+        //change weapons
 
         //intent here is to be able to change weapon with scroll wheel
         //not very necessary but why not
@@ -46,13 +47,18 @@ public class PlayerController : MonoBehaviour
             else
                 ScrollWeaponDown();
         }
+        //
 
+        //attack
         if (Input.GetMouseButtonDown(0) && attackCD <= 0) //left click & cd <= 0
         {
-            if (gameObject.GetComponent<Weapon>().ammo > 0)
+            if (currentWeapon.GetComponent<Weapon>().ammo > 0)
             {
                 Shoot(currentWeapon);
-                --gameObject.GetComponent<Weapon>().ammo; //shoot one shot
+                --currentWeapon.GetComponent<Weapon>().ammo; //decrement the weapon's ammo
+                --controller.numAllAmmo; //decrement the ammo counter for book keeping.
+                Debug.Log("Current Ammo " + currentWeapon.GetComponent<Weapon>().ammo);
+                Debug.Log("Total Ammo " + controller.numAllAmmo);
             }
             else
             {
@@ -61,6 +67,7 @@ public class PlayerController : MonoBehaviour
         }
         //decrement the attack cooldown
         if (attackCD > 0) attackCD -= Time.deltaTime;
+        //
 
     }
 

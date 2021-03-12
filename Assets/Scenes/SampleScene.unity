@@ -455,7 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lerpSpeed: 25
   attackTimer: 0.25
-  controller: {fileID: 0}
+  controller: {fileID: 1530126872}
   weaponsList:
   - {fileID: 3450531531195986559, guid: 73c2540381a8c2c42a2e7df3e0191c96, type: 3}
   - {fileID: 8583104538965745398, guid: bf066aa8d3022b145a198ed4883c7627, type: 3}
@@ -927,6 +927,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoText: {fileID: 1338281933}
   player: {fileID: 411408915}
+  numAllAmmo: 0
+  AmmoLoader: 10
 --- !u!4 &1530126873
 Transform:
   m_ObjectHideFlags: 0

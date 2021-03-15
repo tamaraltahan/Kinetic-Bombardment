@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Base")]
     Rigidbody2D bod;
     public float lerpSpeed;
     public float attackTimer = 0.25f;
@@ -14,14 +15,22 @@ public class PlayerController : MonoBehaviour
     //experimenting with weapon switching
     //using this as a template, but not verbatim, since its missing some features like ammo, which we will have to set on a level to level basis.
     //https://answers.unity.com/questions/1775103/2d-weapon-switching-1.html
-    public List<GameObject> weaponsList = new List<GameObject>();
+    [Header("Weapons")]
+    public List<GameObject> weaponsList = new List<GameObject>(); //for ammunition, which contains logic
+    public List<Sprite> gunsList = new List<Sprite>(); // for swapping weapon models
+    SpriteRenderer renderer;
+
     int currentIndex = 0;
     GameObject currentWeapon;
+
     public GameObject spawnObject;
 
     // Start is called before the first frame update
     void Start()
     {
+        renderer = GetComponent<SpriteRenderer>();
+        renderer.sprite = gunsList[0];
+
         currentWeapon = weaponsList[0];
         bod = GetComponent<Rigidbody2D>(); // set the active body
     }
@@ -74,6 +83,7 @@ public class PlayerController : MonoBehaviour
     void SelectWeapon(int index)
     {
         currentWeapon = weaponsList[index];
+        renderer.sprite = gunsList[index];
     }
 
     //select next weapon based on scroll wheel (does not roll over - as in you have to scroll back down to get the 1st weapon)

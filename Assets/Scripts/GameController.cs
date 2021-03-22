@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     public PlayerController player;
     public int numAllAmmo = 0;
     public int AmmoLoader;// make this a public int. That way when you load a new scene you can set this int to whatever you want.  Customizable starting ammo ;)
+    public List<int> ammoLoadList = new List<int>();
+
     // Start is called before the first frame update
     // public int score = 0;
     void Start()
@@ -32,7 +34,8 @@ public class GameController : MonoBehaviour
     {
         for (int i = 0; i < player.weaponsList.Count; ++i)
         {
-            player.weaponsList[i].GetComponent<Weapon>().ammo = AmmoLoader;
+            //player.weaponsList[i].GetComponent<Weapon>().ammo = AmmoLoader;
+            player.weaponsList[i].GetComponent<Weapon>().ammo = ammoLoadList[i];
         }
         countAmmo();
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     protected Rigidbody2D bod;
+    public GameObject explosion;
     public int ammo;
 
     protected abstract void Awake();
@@ -18,6 +19,11 @@ public abstract class Weapon : MonoBehaviour
         //destroys enemy it hits, then destroys the projectile
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            //Destroy(collision.GetComponent<Rigidbody2D>());
+            collision.gameObject.GetComponent<Enemy1>().Deactivate();
+            //collision.gameObject.SetActive(false);
+            //Instantiate(explosion, transform.position, transform.rotation);
+            //gameObject.SetActive(false);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

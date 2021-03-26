@@ -14,18 +14,22 @@ public class Enemy1 : MonoBehaviour
     bool atFirstMark = true;
     // Update is called once per frame
 
+    public GameObject explosion;
+
     private void Awake()
     {
+        if(wayPoint1 != null)
        targetPos = wayPoint1.transform.position;
     }
     void Update()
     {
-        
+        //move towards target way point
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //swap way points when we collide with it - invisible collission
         if (collision.tag == "EndPoint")
         {
             if (atFirstMark)
@@ -40,4 +44,23 @@ public class Enemy1 : MonoBehaviour
             }
         }
     }
+
+    public void Deactivate()
+    {
+        FindObjectOfType<EnemyRespawner>().enemyCount--;
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Debug.Log("Explosion instantiated");
+        Invoke("Disable", 0.001f);
+    }
+
+    void Disable()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+
 }

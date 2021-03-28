@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [Header("Weapons")]
     public List<GameObject> weaponsList = new List<GameObject>(); //for ammunition, which contains logic
     public List<Sprite> gunsList = new List<Sprite>(); // for swapping weapon models
-    SpriteRenderer renderer;
+    private SpriteRenderer renderer;
 
     int currentIndex = 0;
     GameObject currentWeapon;

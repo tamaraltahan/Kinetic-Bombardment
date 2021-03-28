@@ -15,11 +15,16 @@ public class Enemy1 : MonoBehaviour
     // Update is called once per frame
 
     public GameObject explosion;
+    GameObject respawner;
 
     private void Awake()
     {
         if(wayPoint1 != null)
        targetPos = wayPoint1.transform.position;
+        else
+        {
+            targetPos = transform.position;
+        }
     }
     void Update()
     {
@@ -44,10 +49,15 @@ public class Enemy1 : MonoBehaviour
             }
         }
     }
-
+    //convoluted destroy logic - had to get REALLY creative with it in my attempt at deugging the explosion
+    //Credit to Cole, who generously helped me late at night to fix it, although the solution came out kinda janky
     public void Deactivate()
     {
-        FindObjectOfType<EnemyRespawner>().enemyCount--;
+        respawner = GameObject.Find("EnemyRespawner");
+        if (respawner)
+        {
+            FindObjectOfType<EnemyRespawner>().enemyCount--;
+        }
         Instantiate(explosion, transform.position, Quaternion.identity);
         Debug.Log("Explosion instantiated");
         Invoke("Disable", 0.001f);

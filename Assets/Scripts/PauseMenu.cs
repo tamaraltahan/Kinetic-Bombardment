@@ -30,11 +30,15 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         SceneManager.LoadScene("Main Menu 1");
+        Time.timeScale = 1f;
+        GameIsPaused = false;
     }
     //Will be used to go to the level select. For now it just sends a debug message
     public void LevelSelect()
     {
-        Debug.Log("Loading level select...");
+        SceneManager.LoadScene("Level Select");
+        Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 
 }

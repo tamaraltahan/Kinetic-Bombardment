@@ -15,6 +15,9 @@ public class GameController : MonoBehaviour
     public int AmmoLoader;// make this a public int. That way when you load a new scene you can set this int to whatever you want.  Customizable starting ammo ;)
     public List<int> ammoLoadList = new List<int>();
 
+    public GameObject winScreen; // used to make the win screen accesable
+    public GameObject loseScreen; // used to make the lose screen accesable
+
     // Start is called before the first frame update
     // public int score = 0;
     void Start()
@@ -67,13 +70,16 @@ public class GameController : MonoBehaviour
     //gotta get some scene managemenet here
     private void lose()
     {
+        loseScreen.SetActive(true);
         Debug.Log("Haha idiot loser");
     }
 
     private void win()
     {
+        winScreen.SetActive(true);
         Debug.Log("Pog");
     }
+        
 
     // Update is called once per frame
     void Update()

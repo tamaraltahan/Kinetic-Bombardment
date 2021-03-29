@@ -23,6 +23,6 @@ public class MainMenu : MonoBehaviour
 
     public void AboutScreen()
     {
-        SceneManager.LoadScene(""); //put name of about scene when it is made
+        SceneManager.LoadScene("About Menu"); //put name of about scene when it is made
     }
 }

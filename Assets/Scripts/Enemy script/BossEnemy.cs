@@ -16,12 +16,21 @@ public class BossEnemy : Enemy1
         curHp = maxHp;
     }
     
+    void Update()
+    {
+        if (Weakspot1 == null && Weakspot2 == null)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void DoDamage()
     {
-        if(Weakspot1 != null)
+        if (Weakspot1 != null)
         {
             takeDamage(1);
             Destroy(Weakspot1);
+                 
         }
         if(Weakspot2 != null)
         {
@@ -29,10 +38,9 @@ public class BossEnemy : Enemy1
             Destroy(Weakspot2);
         }
     }
-
-   
+    
     public void takeDamage(int n)
-    {
+    {            
         if (!alive)
         {
             return;
@@ -41,6 +49,7 @@ public class BossEnemy : Enemy1
         {
             curHp = 0;
             alive = false;
+                       
         }
         curHp -= n;
     }

@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement
+;
 public class PauseMenu : MonoBehaviour
 {
     //This is here so it can be used in other scripts since its public. 
@@ -28,7 +29,7 @@ public class PauseMenu : MonoBehaviour
     //Used to switch to the menu but rightnow it only sends a debug message. Need to add the ability to switch scenes later.
     public void LoadMenu()
     {
-        Debug.Log("Loading menu...");
+        SceneManager.LoadScene("Main Menu 1");
     }
     //Will be used to go to the level select. For now it just sends a debug message
     public void LevelSelect()

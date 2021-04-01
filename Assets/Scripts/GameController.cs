@@ -10,11 +10,11 @@ public class GameController : MonoBehaviour
     public Text ammoText; //for telling you that you're out of ammo
     PauseMenu pauser;
 
-
     public PlayerController player;
     public int numAllAmmo = 0;
     public int AmmoLoader;// make this a public int. That way when you load a new scene you can set this int to whatever you want.  Customizable starting ammo ;)
     // Start is called before the first frame update
+    // public int score = 0;
     void Start()
     {
         loadAmmo();
@@ -64,12 +64,12 @@ public class GameController : MonoBehaviour
     //gotta get some scene managemenet here
     private void lose()
     {
-        //Debug.Log("Haha idiot loser");
+        Debug.Log("Haha idiot loser");
     }
 
     private void win()
     {
-        //Debug.Log("Pog");
+        Debug.Log("Pog");
     }
 
     // Update is called once per frame
@@ -89,11 +89,18 @@ public class GameController : MonoBehaviour
         if(numEnemies <= 0 && !isBossALive)
         {
             win();
+            // postLevelScene.LoadScene(postLevelScene.GetActiveScene().name);
         }
         else if(numAllAmmo <= 0)
         {
             lose();
         }
+        //scoreText.text = "Score: " + score.ToString();
     }
-
+    /*
+    public void AddScore(int amt)
+    {
+        score += col;
+    }
+    */
 }

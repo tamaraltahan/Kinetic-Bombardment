@@ -12,6 +12,7 @@ public abstract class Weapon : MonoBehaviour
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Hit: " + collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
@@ -30,8 +31,11 @@ public abstract class Weapon : MonoBehaviour
         //if it hits a boss weakspot
         if (collision.gameObject.CompareTag("BossWeakSpot"))
         {
-            //will enable this when enemy controller script is live with a takeDamage(int n) functions
-            //collision.GetComponent<EnemyController>().takeDamage(damage);
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("Boss"))
+        {
             Destroy(gameObject);
         }
     }

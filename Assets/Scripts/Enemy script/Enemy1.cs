@@ -26,6 +26,7 @@ public class Enemy1 : MonoBehaviour
             targetPos = transform.position;
         }
     }
+
     void Update()
     {
         //move towards target way point

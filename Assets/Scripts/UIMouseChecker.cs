@@ -5,9 +5,14 @@ using UnityEngine.EventSystems;
 
 public class UIMouseChecker : MonoBehaviour
 {
-    public GameController controller;
+     GameController controller;
     // Update is called once per frame
-    private void Update()
+    private void Start()
+    {
+        controller = FindObjectOfType<GameController>();
+        Time.timeScale = 0f;
+    }
+    public void Update()
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {

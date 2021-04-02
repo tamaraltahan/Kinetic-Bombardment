@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 223497050}
   - component: {fileID: 223497049}
   - component: {fileID: 223497048}
+  - component: {fileID: 223497051}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -325,6 +326,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223497046}
   m_CullTransparentMesh: 1
+--- !u!114 &223497051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223497046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 649468458}
+          m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+          m_MethodName: mouseOnUI
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 649468458}
+          m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+          m_MethodName: mouseNotOnUI
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &238833157
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a3577668664034a8e19840c415ea84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoText: {fileID: 2130435633}
   player: {fileID: 948609202}
   numAllAmmo: 0
   AmmoLoader: 10
@@ -3410,6 +3455,7 @@ GameObject:
   - component: {fileID: 1522891786}
   - component: {fileID: 1522891788}
   - component: {fileID: 1522891787}
+  - component: {fileID: 1522891789}
   m_Layer: 5
   m_Name: Pause Menu Background
   m_TagString: Untagged
@@ -3477,6 +3523,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522891785}
   m_CullTransparentMesh: 1
+--- !u!114 &1522891789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522891785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 649468458}
+          m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+          m_MethodName: mouseOnUI
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1639122227
 GameObject:
   m_ObjectHideFlags: 0
@@ -4367,7 +4442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -631, y: -354.89685}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2101188023
@@ -4451,6 +4526,7 @@ GameObject:
   - component: {fileID: 2130045237}
   - component: {fileID: 2130045236}
   - component: {fileID: 2130045235}
+  - component: {fileID: 2130045238}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -4534,6 +4610,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 649468458}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: mouseNotOnUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2130045236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4572,6 +4660,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130045233}
   m_CullTransparentMesh: 1
+--- !u!114 &2130045238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130045233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 649468458}
+          m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+          m_MethodName: mouseOnUI
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2130435630
 GameObject:
   m_ObjectHideFlags: 0

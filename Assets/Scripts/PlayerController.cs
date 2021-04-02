@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject spawnObject;
 
+    bool isMouseOnUI = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,8 +60,11 @@ public class PlayerController : MonoBehaviour
         }
         //
 
+        //
+
         //attack
-        if (Input.GetMouseButtonDown(0) && attackCD <= 0) //left click & cd <= 0
+        isMouseOnUI = controller.evalMouse();
+        if (Input.GetMouseButtonDown(0) && attackCD <= 0 && !isMouseOnUI) //left click & cd <= 0
         {
             if (currentWeapon.GetComponent<Weapon>().ammo > 0)
             {
@@ -68,10 +73,6 @@ public class PlayerController : MonoBehaviour
                 --controller.numAllAmmo; //decrement the ammo counter for book keeping.
                 Debug.Log("Current Ammo " + currentWeapon.GetComponent<Weapon>().ammo);
                 Debug.Log("Total Ammo " + controller.numAllAmmo);
-            }
-            else
-            {
-                controller.noAmmo();
             }
         }
         //decrement the attack cooldown

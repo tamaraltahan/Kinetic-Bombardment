@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     public GameObject winScreen; // used to make the win screen accesable
     public GameObject loseScreen; // used to make the lose screen accesable
 
+    public Text ammocountone;
+    public Sprite ammoui;
 
     private bool isMouseOnUI = false;
 
@@ -42,6 +44,7 @@ public class GameController : MonoBehaviour
             //player.weaponsList[i].GetComponent<Weapon>().ammo = AmmoLoader;
             player.weaponsList[i].GetComponent<Weapon>().ammo = ammoLoadList[i];
         }
+        ammocountone.text = player.weaponsList[0].GetComponent<Weapon>().ammo.ToString();
         countAmmo();
     }
 

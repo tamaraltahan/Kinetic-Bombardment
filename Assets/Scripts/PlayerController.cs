@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,14 +12,16 @@ public class PlayerController : MonoBehaviour
     float attackCD;
     public GameController controller;
 
-
+    public Text ammocountone;
     //experimenting with weapon switching
     //using this as a template, but not verbatim, since its missing some features like ammo, which we will have to set on a level to level basis.
     //https://answers.unity.com/questions/1775103/2d-weapon-switching-1.html
     [Header("Weapons")]
     public List<GameObject> weaponsList = new List<GameObject>(); //for ammunition, which contains logic
     public List<Sprite> gunsList = new List<Sprite>(); // for swapping weapon models
+    public List<Sprite> ammoui = new List<Sprite>();
     private SpriteRenderer renderer;
+    private SpriteRenderer ammouirenderer;
 
     int currentIndex = 0;
     GameObject currentWeapon;
@@ -32,6 +35,9 @@ public class PlayerController : MonoBehaviour
     {
         renderer = GetComponent<SpriteRenderer>();
         renderer.sprite = gunsList[0];
+
+        //ammouirenderer = GetComponent<SpriteRenderer>();
+        //ammouirenderer.sprite = ammoui[0];
 
         currentWeapon = weaponsList[0];
         bod = GetComponent<Rigidbody2D>(); // set the active body
@@ -70,6 +76,7 @@ public class PlayerController : MonoBehaviour
             {
                 Shoot(currentWeapon);
                 --currentWeapon.GetComponent<Weapon>().ammo; //decrement the weapon's ammo
+                ammocountone.text = currentWeapon.GetComponent<Weapon>().ammo.ToString();
                 --controller.numAllAmmo; //decrement the ammo counter for book keeping.
                 Debug.Log("Current Ammo " + currentWeapon.GetComponent<Weapon>().ammo);
                 Debug.Log("Total Ammo " + controller.numAllAmmo);
@@ -85,6 +92,8 @@ public class PlayerController : MonoBehaviour
     {
         currentWeapon = weaponsList[index];
         renderer.sprite = gunsList[index];
+        ammocountone.text = weaponsList[index].GetComponent<Weapon>().ammo.ToString();
+        ammouirenderer.sprite = ammoui[index];
     }
 
     //select next weapon based on scroll wheel (does not roll over - as in you have to scroll back down to get the 1st weapon)

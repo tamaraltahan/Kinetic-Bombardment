@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     float attackCD;
     public GameController controller;
 
-    public Text ammocountone;
+    //public Text ammocountone;
     //experimenting with weapon switching
     //using this as a template, but not verbatim, since its missing some features like ammo, which we will have to set on a level to level basis.
     //https://answers.unity.com/questions/1775103/2d-weapon-switching-1.html
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
             {
                 Shoot(currentWeapon);
                 --currentWeapon.GetComponent<Weapon>().ammo; //decrement the weapon's ammo
-                ammocountone.text = currentWeapon.GetComponent<Weapon>().ammo.ToString();
+                //ammocountone.text = currentWeapon.GetComponent<Weapon>().ammo.ToString();
                 --controller.numAllAmmo; //decrement the ammo counter for book keeping.
                 Debug.Log("Current Ammo " + currentWeapon.GetComponent<Weapon>().ammo);
                 Debug.Log("Total Ammo " + controller.numAllAmmo);
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
     {
         currentWeapon = weaponsList[index];
         renderer.sprite = gunsList[index];
-        ammocountone.text = weaponsList[index].GetComponent<Weapon>().ammo.ToString();
+        //ammocountone.text = weaponsList[index].GetComponent<Weapon>().ammo.ToString();
         ammouirenderer.sprite = ammoui[index];
     }
 

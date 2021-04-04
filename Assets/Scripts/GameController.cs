@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
             //player.weaponsList[i].GetComponent<Weapon>().ammo = AmmoLoader;
             player.weaponsList[i].GetComponent<Weapon>().ammo = ammoLoadList[i];
         }
-        ammocountone.text = player.weaponsList[0].GetComponent<Weapon>().ammo.ToString();
+        //ammocountone.text = player.weaponsList[0].GetComponent<Weapon>().ammo.ToString();
         countAmmo();
     }
 

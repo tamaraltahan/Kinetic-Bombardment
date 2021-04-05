@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer renderer;
     private SpriteRenderer ammouirenderer;
 
-    int currentIndex = 0;
+    public int currentIndex = 0;
     GameObject currentWeapon;
 
     public GameObject spawnObject;
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
         currentWeapon = weaponsList[index];
         renderer.sprite = gunsList[index];
         //ammocountone.text = weaponsList[index].GetComponent<Weapon>().ammo.ToString();
-        ammouirenderer.sprite = ammoui[index];
+        //ammouirenderer.sprite = ammoui[index];
     }
 
     //select next weapon based on scroll wheel (does not roll over - as in you have to scroll back down to get the 1st weapon)

@@ -16,6 +16,7 @@ public abstract class Weapon : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
+            Sound.PlaySound("impact");
         }
         //destroys enemy it hits, then destroys the projectile
         if (collision.gameObject.CompareTag("Enemy"))

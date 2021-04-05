@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3432374043435416737}
   - component: {fileID: 3432374043435416736}
   - component: {fileID: 3432374043435416739}
+  - component: {fileID: 1526434500205895619}
   m_Layer: 0
   m_Name: cyan_ufo_0
   m_TagString: Enemy
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3432374043435416738}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.7092686, y: 3.098094, z: 7.4394035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -129,3 +130,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1526434500205895619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432374043435416738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37187985a8e4e134fba8a15ab2b0149a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wayPoint1: {fileID: 0}
+  wayPoint2: {fileID: 0}
+  speed: 0
+  explosion: {fileID: 6166365464165790354, guid: 8e13f47f8d86ead458f4108d6624f889, type: 3}

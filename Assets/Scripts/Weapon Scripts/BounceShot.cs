@@ -51,7 +51,8 @@ public class BounceShot : Weapon
         }
         if (collision.gameObject.CompareTag("BossWeakSpot"))
         {
-            //todo
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 

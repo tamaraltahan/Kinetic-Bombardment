@@ -138,6 +138,7 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(pewpew, spawnObject.transform.position, spawnObject.transform.rotation);
         attackCD = attackTimer; //resets cooldown for attacks
+        Sound.PlaySound("shoot"); 
     }
 
 }

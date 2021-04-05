@@ -66,6 +66,7 @@ public class Enemy1 : MonoBehaviour
         Instantiate(explosion, transform.position, Quaternion.identity);
         Debug.Log("Explosion instantiated");
         Invoke("Disable", 0.001f);
+        Sound.PlaySound("enemy"); 
     }
 
     void Disable()

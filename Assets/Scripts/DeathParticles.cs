@@ -6,11 +6,16 @@ public class DeathParticles : MonoBehaviour
 {
     public ParticleSystem DestructionEffect; //assign prefab in editor or elsewhere
                                              //in code
+
+    private void Awake()
+    {
+        DestructionEffect = GetComponent<ParticleSystem>();
+        DestructionEffect.Stop();
+    }
     void Explode()
     {
         //Instantiate our one-off particle system
-        ParticleSystem explosionEffect = Instantiate(DestructionEffect)
-                                         as ParticleSystem;
+        ParticleSystem explosionEffect = Instantiate(DestructionEffect);
         explosionEffect.transform.position = transform.position;
         //play it
         explosionEffect.loop = false;

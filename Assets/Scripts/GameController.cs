@@ -7,7 +7,6 @@ public class GameController : MonoBehaviour
 {
     int numEnemies;
     bool isBossALive = false;
-    public Text ammoText; //for telling you that you're out of ammo
     PauseMenu pauser;
 
     public PlayerController player;
@@ -17,6 +16,11 @@ public class GameController : MonoBehaviour
 
     public GameObject winScreen; // used to make the win screen accesable
     public GameObject loseScreen; // used to make the lose screen accesable
+
+    public Text ammocountone;
+    public Sprite ammoui;
+
+    private bool isMouseOnUI = false;
 
     // Start is called before the first frame update
     // public int score = 0;
@@ -40,6 +44,7 @@ public class GameController : MonoBehaviour
             //player.weaponsList[i].GetComponent<Weapon>().ammo = AmmoLoader;
             player.weaponsList[i].GetComponent<Weapon>().ammo = ammoLoadList[i];
         }
+        //ammocountone.text = player.weaponsList[0].GetComponent<Weapon>().ammo.ToString();
         countAmmo();
     }
 
@@ -51,20 +56,6 @@ public class GameController : MonoBehaviour
         {
             isBossALive = true;
         }
-    }
-
-    //shows the displayed text for a few seconds, then dissapears
-    public void noAmmo()
-    {
-        StartCoroutine("ShowMessage");
-    }
-
-    private IEnumerable ShowMessage()
-    {
-        ammoText.text = "Out of ammo!";
-        ammoText.enabled = true;
-        yield return new WaitForSeconds(3f);
-        ammoText.enabled = false;
     }
 
     //gotta get some scene managemenet here
@@ -84,7 +75,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Press 'p' to pause
         if (Input.GetKeyDown(KeyCode.P))
         {
             if (!pauser.GameIsPaused)
@@ -106,6 +97,23 @@ public class GameController : MonoBehaviour
         }
         //scoreText.text = "Score: " + score.ToString();
     }
+
+    //using these two public functions in UI scripts to centralize the detection process.
+    public void mouseOnUI()
+    {
+        isMouseOnUI = true;
+    }
+    public void mouseNotOnUI()
+    {
+        isMouseOnUI = false;
+    }
+
+    public bool evalMouse()
+    {
+        return isMouseOnUI;
+    }
+
+
     /*
     public void AddScore(int amt)
     {

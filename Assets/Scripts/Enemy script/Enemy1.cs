@@ -8,10 +8,10 @@ public class Enemy1 : MonoBehaviour
     public GameObject wayPoint1;
     public GameObject wayPoint2;
 
-    Vector2 targetPos;
+    protected Vector2 targetPos;
 
     public float speed;
-    bool atFirstMark = true;
+    protected bool atFirstMark = true;
     // Update is called once per frame
 
     public GameObject explosion;
@@ -27,10 +27,14 @@ public class Enemy1 : MonoBehaviour
         }
     }
 
-    void Update()
+    protected void MoveToWayPoints()
     {
         //move towards target way point
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);   
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+    }
+    void Update()
+    {
+        MoveToWayPoints();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

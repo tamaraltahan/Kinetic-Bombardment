@@ -456,6 +456,7 @@ MonoBehaviour:
   ammoui: []
   currentIndex: 0
   spawnObject: {fileID: 632058828}
+  ammoUI: {fileID: 1376904354}
 --- !u!50 &411408916
 Rigidbody2D:
   serializedVersion: 4

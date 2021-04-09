@@ -456,6 +456,8 @@ MonoBehaviour:
   gunsList:
   - {fileID: 21300000, guid: 4c528711bc59e764f92e4d790cb1473c, type: 3}
   - {fileID: 21300000, guid: 7eb399df947cbb142bb94db4e280a825, type: 3}
+  ammoui: []
+  currentIndex: 0
   spawnObject: {fileID: 1281155047}
 --- !u!4 &842358830
 Transform:
@@ -601,13 +603,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a3577668664034a8e19840c415ea84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoText: {fileID: 24221475}
   player: {fileID: 842358829}
   numAllAmmo: 0
   AmmoLoader: 10
   ammoLoadList: 190000000a000000
   winScreen: {fileID: 0}
   loseScreen: {fileID: 0}
+  ammocountone: {fileID: 0}
+  ammoui: {fileID: 0}
 --- !u!4 &1122059617
 Transform:
   m_ObjectHideFlags: 0
@@ -1101,3 +1104,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2500534410842169438
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6681507205014104513, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_Name
+      value: BloodSplash
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240698127172237639, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240698127172237639, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240698127172237639, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240698127172237639, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240698127172237639, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.53729963
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240698127172237639, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.8433915
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240698127172237639, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240698127172237639, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240698127172237639, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240698127172237639, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240698127172237639, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249341978209329517, guid: 09579dc797834314c89b43cfac974482, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09579dc797834314c89b43cfac974482, type: 3}

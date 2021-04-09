@@ -5,28 +5,22 @@ using UnityEngine;
 public class BossEnemy : Enemy1
 {
     public float maxHp = 2;
-    private float curHp;
+    public float curHp = 2;
     public bool alive = true;
     public GameObject Weakspot1;
     public GameObject Weakspot2;
-
-    private void Awake()
+    
+    void start()
     {
+        alive = true;
         curHp = maxHp;
-        if (wayPoint1 != null)
-            targetPos = wayPoint1.transform.position;
-        else
-        {
-            targetPos = transform.position;
-        }
     }
-
+    
     void Update()
     {
-        MoveToWayPoints();
         if (Weakspot1 == null && Weakspot2 == null)
         {
-            Deactivate();
+            Destroy(gameObject);
         }
     }
 
@@ -47,30 +41,16 @@ public class BossEnemy : Enemy1
     
     public void takeDamage(int n)
     {            
-        curHp -= n;
+        if (!alive)
+        {
+            return;
+        }
         if(curHp <= 0)
         {
-            Deactivate();
+            curHp = 0;
+            alive = false;
+                       
         }
+        curHp -= n;
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Collision");
-        //swap way points when we collide with it - invisible collission
-        if (collision.CompareTag("EndPoint"))
-        {
-            if (atFirstMark)
-            {
-                targetPos = wayPoint2.transform.position;
-                atFirstMark = false;
-            }
-            else
-            {
-                targetPos = wayPoint1.transform.position;
-                atFirstMark = true;
-            }
-        }
-    }
-
 }

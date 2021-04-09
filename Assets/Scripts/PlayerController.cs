@@ -78,8 +78,8 @@ public class PlayerController : MonoBehaviour
                 --currentWeapon.GetComponent<Weapon>().ammo; //decrement the weapon's ammo
                 //ammocountone.text = currentWeapon.GetComponent<Weapon>().ammo.ToString();
                 --controller.numAllAmmo; //decrement the ammo counter for book keeping.
-                //Debug.Log("Current Ammo " + currentWeapon.GetComponent<Weapon>().ammo);
-                //Debug.Log("Total Ammo " + controller.numAllAmmo);
+                Debug.Log("Current Ammo " + currentWeapon.GetComponent<Weapon>().ammo);
+                Debug.Log("Total Ammo " + controller.numAllAmmo);
             }
         }
         //decrement the attack cooldown
@@ -108,11 +108,6 @@ public class PlayerController : MonoBehaviour
         {
             nextIndex = ++currentIndex;
         }
-        if(currentIndex > weaponsList.Count - 1)
-        {
-            nextIndex = weaponsList.Count - 1;
-        }
-        currentIndex = nextIndex;
         SelectWeapon(nextIndex);
     }
     void ScrollWeaponDown()
@@ -126,11 +121,6 @@ public class PlayerController : MonoBehaviour
         {
             nextIndex = --currentIndex;
         }
-        if(currentIndex < 0)
-        {
-            nextIndex = 0;
-        }
-        currentIndex = nextIndex;
         SelectWeapon(nextIndex);
     }
 

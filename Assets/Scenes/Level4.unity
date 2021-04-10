@@ -996,6 +996,7 @@ GameObject:
   - component: {fileID: 273523301}
   - component: {fileID: 273523302}
   - component: {fileID: 273523299}
+  - component: {fileID: 273523300}
   m_Layer: 0
   m_Name: LeftEye
   m_TagString: BossWeakSpot
@@ -1033,6 +1034,27 @@ CircleCollider2D:
   m_Offset: {x: -0.00000017881393, y: -0.1}
   serializedVersion: 2
   m_Radius: 0.26000005
+--- !u!50 &273523300
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273523297}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!212 &273523301
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4294,7 +4316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wayPoint1: {fileID: 185787708}
   wayPoint2: {fileID: 566481128}
-  speed: 2
+  speed: 1.5
   explosion: {fileID: 6166365464165790354, guid: 8e13f47f8d86ead458f4108d6624f889, type: 3}
   maxHp: 2
   curHp: 2
@@ -4386,7 +4408,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &1393792937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5292,6 +5314,7 @@ GameObject:
   - component: {fileID: 1821884706}
   - component: {fileID: 1821884707}
   - component: {fileID: 1821884704}
+  - component: {fileID: 1821884705}
   m_Layer: 0
   m_Name: RightEye
   m_TagString: BossWeakSpot
@@ -5329,6 +5352,27 @@ CircleCollider2D:
   m_Offset: {x: 0.00000017881393, y: -0.1}
   serializedVersion: 2
   m_Radius: 0.26000005
+--- !u!50 &1821884705
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821884702}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!212 &1821884706
 SpriteRenderer:
   m_ObjectHideFlags: 0

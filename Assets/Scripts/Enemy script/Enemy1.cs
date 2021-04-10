@@ -27,10 +27,15 @@ public class Enemy1 : MonoBehaviour
         }
     }
 
-    void Update()
+    protected void MoveToPoints()
     {
         //move towards target way point
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);   
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+    }
+
+    void Update()
+    {
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

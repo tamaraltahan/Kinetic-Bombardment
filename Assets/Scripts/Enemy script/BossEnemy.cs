@@ -18,6 +18,7 @@ public class BossEnemy : Enemy1
     
     void Update()
     {
+        MoveToPoints();
         if (Weakspot1 == null && Weakspot2 == null)
         {
             Destroy(gameObject);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sound : MonoBehaviour
 {
 
-    public static AudioClip shootSound, impactSound, enemySound;
+    public static AudioClip shootSound, impactSound, enemySound, eyesSound, bounceSound, bossSound;
     static AudioSource audioS;
     void Start()
     {
@@ -13,6 +13,9 @@ public class Sound : MonoBehaviour
         shootSound = Resources.Load<AudioClip> ("shoot");
         impactSound = Resources.Load<AudioClip> ("impact");
         enemySound = Resources.Load<AudioClip> ("enemy");
+        eyesSound = Resources.Load<AudioClip> ("eyes");
+        bounceSound = Resources.Load<AudioClip> ("bounce");
+        bossSound = Resources.Load<AudioClip> ("boss");
     }
     void Update()
     {
@@ -31,6 +34,15 @@ public class Sound : MonoBehaviour
             break;
             case "enemy" :
             audioS.PlayOneShot (enemySound);
+            break;
+            case "eyes" :
+            audioS.PlayOneShot (eyesSound);
+            break;
+            case "bounce" :
+            audioS.PlayOneShot (bounceSound);
+            break;
+            case "boss" :
+            audioS.PlayOneShot (bossSound);
             break;
         }
     }

@@ -15,6 +15,7 @@ public class DeathParticles : MonoBehaviour
         //play it
         explosionEffect.loop = false;
         explosionEffect.Play();
+        Sound.PlaySound("eyes"); 
 
         //destroy the particle system when its duration is up, right
         //it would play a second time.

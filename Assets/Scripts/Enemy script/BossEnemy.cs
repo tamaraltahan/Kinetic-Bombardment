@@ -22,6 +22,7 @@ public class BossEnemy : Enemy1
         if (Weakspot1 == null && Weakspot2 == null)
         {
             Destroy(gameObject);
+            Sound.PlaySound("boss"); 
         }
     }
 

@@ -38,6 +38,7 @@ public class BounceShot : Weapon
             float speed = lastVel.magnitude;
             Vector2 dir = Vector2.Reflect(lastVel.normalized, collision.contacts[0].normal);
             bod.velocity = dir * Mathf.Max(speed, 0f);
+            Sound.PlaySound("bounce"); 
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {

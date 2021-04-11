@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class UISpriteController : MonoBehaviour
 {
     private Image uiImage;
-    private SpriteRenderer spriteControl;
     private PlayerController player;
     public List<Sprite> spriteList = new List<Sprite>();
     private int prevIndex;
@@ -14,7 +13,6 @@ public class UISpriteController : MonoBehaviour
     private void Awake()
     {
         uiImage = GetComponent<Image>();
-        spriteControl = GetComponent<SpriteRenderer>();
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         prevIndex = player.currentIndex;
         Debug.Log("Array size: " + spriteList.Count + "\nPlayer Index: " + player.currentIndex + "\nCurrent Index: " + prevIndex);
@@ -22,8 +20,7 @@ public class UISpriteController : MonoBehaviour
 
     private void ChangeSprite(int index)
     {
-        spriteControl.sprite = spriteList[index];
-        uiImage.sprite = spriteControl.sprite;
+        uiImage.sprite = spriteList[index];
     }
 
     private void Update()

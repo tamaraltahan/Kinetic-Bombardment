@@ -93,6 +93,8 @@ public class GameController : MonoBehaviour
         }
         else if(numAllAmmo <= 0)
         {
+            Weapon finalBullet = FindObjectOfType<Weapon>(); ;
+            if(finalBullet == null && numEnemies > 0)
             lose();
         }
         //scoreText.text = "Score: " + score.ToString();

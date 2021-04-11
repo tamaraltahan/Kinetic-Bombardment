@@ -12,7 +12,7 @@ public abstract class Weapon : MonoBehaviour
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Hit: " + collision.gameObject.tag);
+        //Debug.Log("Hit: " + collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);

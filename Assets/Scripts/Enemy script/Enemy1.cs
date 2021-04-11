@@ -65,7 +65,7 @@ public class Enemy1 : MonoBehaviour
             FindObjectOfType<EnemyRespawner>().enemyCount--;
         }
         Instantiate(explosion, transform.position, Quaternion.identity);
-        Debug.Log("Explosion instantiated");
+        //Debug.Log("Explosion instantiated");
         Invoke("Disable", 0.001f);
         Sound.PlaySound("enemy"); 
     }

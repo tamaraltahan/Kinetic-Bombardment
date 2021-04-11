@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
         currentWeapon = weaponsList[0];
         bod = GetComponent<Rigidbody2D>(); // set the active body
+        ammoUI = GameObject.Find("Ammo").GetComponent<Text>();
     }
 
 
@@ -81,8 +82,8 @@ public class PlayerController : MonoBehaviour
                 --currentWeapon.GetComponent<Weapon>().ammo; //decrement the weapon's ammo
                 //ammocountone.text = currentWeapon.GetComponent<Weapon>().ammo.ToString();
                 --controller.numAllAmmo; //decrement the ammo counter for book keeping.
-                Debug.Log("Current Ammo " + currentWeapon.GetComponent<Weapon>().ammo);
-                Debug.Log("Total Ammo " + controller.numAllAmmo);
+                //Debug.Log("Current Ammo " + currentWeapon.GetComponent<Weapon>().ammo);
+                //Debug.Log("Total Ammo " + controller.numAllAmmo);
             }
         }
         //decrement the attack cooldown

@@ -15,7 +15,7 @@ public class UISpriteController : MonoBehaviour
         uiImage = GetComponent<Image>();
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         prevIndex = player.currentIndex;
-        Debug.Log("Array size: " + spriteList.Count + "\nPlayer Index: " + player.currentIndex + "\nCurrent Index: " + prevIndex);
+        //Debug.Log("Array size: " + spriteList.Count + "\nPlayer Index: " + player.currentIndex + "\nCurrent Index: " + prevIndex);
     }
 
     private void ChangeSprite(int index)
@@ -28,7 +28,7 @@ public class UISpriteController : MonoBehaviour
         //only change sprites if the index is different
         if(player.currentIndex != prevIndex)
         {
-            Debug.Log("Player's Index: " + player.currentIndex + ", Previous index: " + prevIndex);
+            //Debug.Log("Player's Index: " + player.currentIndex + ", Previous index: " + prevIndex);
             ChangeSprite(player.currentIndex);
             prevIndex = player.currentIndex;
         }

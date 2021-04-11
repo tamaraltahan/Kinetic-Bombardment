@@ -62,13 +62,13 @@ public class GameController : MonoBehaviour
     private void lose()
     {
         loseScreen.SetActive(true);
-        Debug.Log("Haha idiot loser");
+        //Debug.Log("Haha idiot loser");
     }
 
     private void win()
     {
         winScreen.SetActive(true);
-        Debug.Log("Pog");
+        //Debug.Log("Pog");
     }
         
 

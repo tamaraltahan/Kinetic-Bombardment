@@ -56,6 +56,10 @@ public class GameController : MonoBehaviour
         {
             isBossALive = true;
         }
+        else
+        {
+        isBossALive = false;
+        }   
     }
 
     //gotta get some scene managemenet here

@@ -12,17 +12,11 @@ public class PlayerController : MonoBehaviour
     float attackCD;
     public GameController controller;
 
-    //public Text ammocountone;
-    //experimenting with weapon switching
-    //using this as a template, but not verbatim, since its missing some features like ammo, which we will have to set on a level to level basis.
-    //https://answers.unity.com/questions/1775103/2d-weapon-switching-1.html
     [Header("Weapons")]
     public List<GameObject> weaponsList = new List<GameObject>(); //for ammunition, which contains logic
     public List<Sprite> gunsList = new List<Sprite>(); // for swapping weapon models
     public List<Sprite> ammoui = new List<Sprite>();
     private SpriteRenderer renderer;
-    private SpriteRenderer ammouirenderer;
-
     public int currentIndex = 0;
     GameObject currentWeapon;
 
@@ -41,6 +35,7 @@ public class PlayerController : MonoBehaviour
         //ammouirenderer = GetComponent<SpriteRenderer>();
         //ammouirenderer.sprite = ammoui[0];
 
+        if(spawnObject == null) spawnObject = GameObject.Find("SpawnPt");
         currentWeapon = weaponsList[0];
         bod = GetComponent<Rigidbody2D>(); // set the active body
         ammoUI = GameObject.Find("Ammo").GetComponent<Text>();
@@ -57,10 +52,7 @@ public class PlayerController : MonoBehaviour
         ammoUI.text = "Current Ammo: " + currentWeapon.GetComponent<Weapon>().ammo; // ammo UI
         //
 
-        //change weapons
-
-        //intent here is to be able to change weapon with scroll wheel
-        //not very necessary but why not
+        //change weapons - scroll wheel
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0)
         {
@@ -68,8 +60,6 @@ public class PlayerController : MonoBehaviour
             else
                 ScrollWeaponDown();
         }
-        //
-
         //
 
         //attack
@@ -80,10 +70,7 @@ public class PlayerController : MonoBehaviour
             {
                 Shoot(currentWeapon);
                 --currentWeapon.GetComponent<Weapon>().ammo; //decrement the weapon's ammo
-                //ammocountone.text = currentWeapon.GetComponent<Weapon>().ammo.ToString();
                 --controller.numAllAmmo; //decrement the ammo counter for book keeping.
-                //Debug.Log("Current Ammo " + currentWeapon.GetComponent<Weapon>().ammo);
-                //Debug.Log("Total Ammo " + controller.numAllAmmo);
             }
         }
         //decrement the attack cooldown
@@ -94,38 +81,39 @@ public class PlayerController : MonoBehaviour
 
     void SelectWeapon(int index)
     {
+        Debug.Log(index);
         currentWeapon = weaponsList[index];
         renderer.sprite = gunsList[index];
-        //ammocountone.text = weaponsList[index].GetComponent<Weapon>().ammo.ToString();
-        //ammouirenderer.sprite = ammoui[index];
     }
 
     //select next weapon based on scroll wheel (does not roll over - as in you have to scroll back down to get the 1st weapon)
     void ScrollWeaponUp()
     {
         int nextIndex;
-        if(currentIndex == 0)
+        if(currentIndex == weaponsList.Count-1)
         {
-            nextIndex = weaponsList.Count - 1;
+            nextIndex = 0;
         }
         else
         {
             nextIndex = ++currentIndex;
         }
-        SelectWeapon(nextIndex);
+        currentIndex = nextIndex;
+        SelectWeapon(currentIndex);
     }
     void ScrollWeaponDown()
     {
         int nextIndex;
         if (currentIndex == 0)
         {
-            nextIndex = 0;
+            nextIndex = weaponsList.Count - 1;
         }
         else
         {
             nextIndex = --currentIndex;
         }
-        SelectWeapon(nextIndex);
+        currentIndex = nextIndex;
+        SelectWeapon(currentIndex);
     }
 
     void Shoot(GameObject pewpew)

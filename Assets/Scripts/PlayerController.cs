@@ -18,9 +18,10 @@ public class PlayerController : MonoBehaviour
     public List<Sprite> ammoui = new List<Sprite>();
     private SpriteRenderer renderer;
     public int currentIndex = 0;
-    GameObject currentWeapon;
+    public GameObject currentWeapon;
 
-    public GameObject spawnObject;
+    bool isSineShot = false;
+    public GameObject spawnObject; //where bullets come out of
 
     bool isMouseOnUI = false;
 
@@ -61,6 +62,8 @@ public class PlayerController : MonoBehaviour
                 ScrollWeaponDown();
         }
         //
+
+
 
         //attack
         isMouseOnUI = controller.evalMouse();

@@ -21,16 +21,17 @@ public class SinuShot : Weapon
     private float period;
     private Vector3 position;
     private Vector3 axis;
+    private Vector2 start;
 
     public PlayerController player;
+
 
     protected override void Awake()
     {
         //period = Mathf.PI / frequency;
         bod = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player").GetComponent<PlayerController>();
-        position = player.transform.position;
-        axis = transform.up;
+        position = player.spawnObject.transform.position;
     }
 
 
@@ -41,7 +42,7 @@ public class SinuShot : Weapon
     private void Oscillate()
     {
         position += transform.up * Time.deltaTime * speed;
-        transform.position = position + axis * Mathf.Sin(Time.time * frequency) * amplitude;
+        transform.position = position + transform.right * Mathf.Sin(Time.time * frequency) * amplitude;
     }
 
     private void OnEnable()

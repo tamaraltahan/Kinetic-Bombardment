@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3433646848940568284}
   - component: {fileID: 3433646848940568287}
   - component: {fileID: 3433646848940568286}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: sineBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 0}
-  ammo: 3
+  ammo: 1
   speed: 6
   amplitude: 1
   frequency: 7

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6193127959823235492}
   - component: {fileID: 4789501844324297726}
   - component: {fileID: 5242034166396871148}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Bouncer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,5 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d457cd3420b7749846aa311a9467d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 0}
+  ammo: 3
   MaxBounces: 5
   speed: 500

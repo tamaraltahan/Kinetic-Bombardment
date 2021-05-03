@@ -7,24 +7,11 @@ public class SinuShot : Weapon
     
     public float speed = 15f;
 
-    //good old trig
-    //not using these yet, may do so for further control over the function.
-    //This would use the function p(x) = Amp sin( freq (t + hShift)) + vShift, where x is position and t is time.
-
     public float amplitude = 5f; //amplitude;
     public float frequency = 4f; //Frequency
-    public float horizontalShift = 0; //Horizontal Shift
-    public float verticalShift = 0; //vertical shift;
-
-
-
-    private float period;
     private Vector3 position;
-    private Vector3 axis;
-    private Vector2 start;
 
     public PlayerController player;
-
 
     protected override void Awake()
     {

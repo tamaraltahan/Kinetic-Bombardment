@@ -137,4 +137,4 @@ MonoBehaviour:
   explosion: {fileID: 0}
   ammo: 2
   speed: 500
-  BlastRadius: 2
+  BlastRadius: 3

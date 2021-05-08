@@ -72,6 +72,7 @@ public class GameController : MonoBehaviour
     private void win()
     {
         winScreen.SetActive(true);
+        SelectMenu.unlocked += 1;
         //Debug.Log("Pog");
     }
         

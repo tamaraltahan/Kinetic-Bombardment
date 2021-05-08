@@ -2642,7 +2642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1029235038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2666,6 +2666,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d0a435a5f85137049bc7a41a1fa283da, type: 3}
   ammoui: []
   currentIndex: 0
+  currentWeapon: {fileID: 0}
   spawnObject: {fileID: 0}
   ammoUI: {fileID: 0}
 --- !u!212 &1029235039
@@ -3520,6 +3521,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7eb399df947cbb142bb94db4e280a825, type: 3}
   ammoui: []
   currentIndex: 0
+  currentWeapon: {fileID: 0}
   spawnObject: {fileID: 1644471264}
   ammoUI: {fileID: 2070037991}
 --- !u!4 &1291030591
@@ -4119,6 +4121,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d0a435a5f85137049bc7a41a1fa283da, type: 3}
   ammoui: []
   currentIndex: 0
+  currentWeapon: {fileID: 0}
   spawnObject: {fileID: 0}
   ammoUI: {fileID: 2070037991}
 --- !u!212 &1447482933

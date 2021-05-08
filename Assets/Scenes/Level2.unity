@@ -1538,7 +1538,7 @@ MonoBehaviour:
   player: {fileID: 948609202}
   numAllAmmo: 0
   AmmoLoader: 10
-  ammoLoadList: 0200000008000000
+  ammoLoadList: 0200000014000000
   winScreen: {fileID: 466711374}
   loseScreen: {fileID: 1179653707}
   ammocountone: {fileID: 0}
@@ -2642,6 +2642,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7eb399df947cbb142bb94db4e280a825, type: 3}
   ammoui: []
   currentIndex: 0
+  currentWeapon: {fileID: 0}
   spawnObject: {fileID: 1190304483}
   ammoUI: {fileID: 1685061638}
 --- !u!4 &948609203
@@ -3196,6 +3197,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d0a435a5f85137049bc7a41a1fa283da, type: 3}
   ammoui: []
   currentIndex: 0
+  currentWeapon: {fileID: 0}
   spawnObject: {fileID: 0}
   ammoUI: {fileID: 1685061638}
 --- !u!212 &1152544446
@@ -5141,7 +5143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1956208292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5165,6 +5167,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d0a435a5f85137049bc7a41a1fa283da, type: 3}
   ammoui: []
   currentIndex: 0
+  currentWeapon: {fileID: 0}
   spawnObject: {fileID: 0}
   ammoUI: {fileID: 0}
 --- !u!212 &1956208293

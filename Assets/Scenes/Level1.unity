@@ -4149,7 +4149,7 @@ MonoBehaviour:
   player: {fileID: 768402805}
   numAllAmmo: 0
   AmmoLoader: 10
-  ammoLoadList: 00000000000000000a000000
+  ammoLoadList: 0a000000000000000a000000
   winScreen: {fileID: 52570290}
   loseScreen: {fileID: 1628493146}
   ammocountone: {fileID: 0}

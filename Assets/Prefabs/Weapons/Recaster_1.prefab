@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 0}
-  ammo: 100
+  ammo: 10
   speed: 500
 --- !u!70 &714519669818648498
 CapsuleCollider2D:

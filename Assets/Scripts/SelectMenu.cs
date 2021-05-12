@@ -16,25 +16,6 @@ public class SelectMenu : MonoBehaviour
     }
 
 
-    void onEnable() 
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-
-    void onDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-       /* Button b2 = GameObject.Find("Level 2 Button").getComponent<Button>();
-        if (unlocked < 2) b2.interactable = false;
-        else button2.interactable = true;*/
-    }
-
     public void SelectLevel1()
     {
         SceneManager.LoadScene("Level1");
@@ -75,17 +56,26 @@ public class SelectMenu : MonoBehaviour
 
     public void SelectLevel6()
     {
-        SceneManager.LoadScene("Level6");
+        if (unlocked >= 6)
+        {
+            SceneManager.LoadScene("Level6");
+        }
     }
 
     public void SelectLevel7()
     {
-        SceneManager.LoadScene("Level7");
+        if (unlocked >= 7)
+        {
+            SceneManager.LoadScene("Level7");
+        }
     }
 
     public void SelectLevel8()
     {
-        SceneManager.LoadScene("Level8");
+        if (unlocked >= 8)
+        {
+            SceneManager.LoadScene("Level8");
+        }
     }
 
     public void BackButton()

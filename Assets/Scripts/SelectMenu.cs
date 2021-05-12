@@ -73,6 +73,21 @@ public class SelectMenu : MonoBehaviour
         }
     }
 
+    public void SelectLevel6()
+    {
+        SceneManager.LoadScene("Level6");
+    }
+
+    public void SelectLevel7()
+    {
+        SceneManager.LoadScene("Level7");
+    }
+
+    public void SelectLevel8()
+    {
+        SceneManager.LoadScene("Level8");
+    }
+
     public void BackButton()
     {
         SceneManager.LoadScene("Main Menu 1");

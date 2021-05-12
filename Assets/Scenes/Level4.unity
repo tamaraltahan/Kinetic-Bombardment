@@ -369,7 +369,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1735117474}
         m_TargetAssemblyTypeName: LoadLevels, Assembly-CSharp
-        m_MethodName: Level4
+        m_MethodName: SelectLevel5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3023,7 +3023,7 @@ RectTransform:
   m_Children:
   - {fileID: 300198215}
   m_Father: {fileID: 1759185467}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -3630,6 +3630,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.27, y: 0.34}
   m_EdgeRadius: 0
+<<<<<<< HEAD
 --- !u!1 &1132970646
 GameObject:
   m_ObjectHideFlags: 0
@@ -3744,6 +3745,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+=======
+>>>>>>> main
 --- !u!1 &1167069780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4799,7 +4802,7 @@ RectTransform:
   m_Children:
   - {fileID: 2001925143}
   m_Father: {fileID: 1759185467}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -5106,7 +5109,7 @@ RectTransform:
   - {fileID: 1448307028}
   - {fileID: 117894529}
   m_Father: {fileID: 1759185467}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5145,7 +5148,6 @@ RectTransform:
   m_Children:
   - {fileID: 2008482761}
   - {fileID: 160687986}
-  - {fileID: 1132970647}
   - {fileID: 1002405553}
   - {fileID: 1598617221}
   - {fileID: 1735117478}
@@ -5696,7 +5698,7 @@ RectTransform:
   - {fileID: 1126253601}
   - {fileID: 1779040489}
   m_Father: {fileID: 1759185467}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5760,6 +5762,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954445711}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!1 &1989436890
 GameObject:
   m_ObjectHideFlags: 0
@@ -5874,6 +5877,8 @@ RectTransform:
   m_AnchoredPosition: {x: -10.793335, y: 6.0317993}
   m_SizeDelta: {x: 3.5907, y: 3.4434}
   m_Pivot: {x: 0.5000254, y: 0.5000064}
+=======
+>>>>>>> main
 --- !u!1 &2001276550
 GameObject:
   m_ObjectHideFlags: 0

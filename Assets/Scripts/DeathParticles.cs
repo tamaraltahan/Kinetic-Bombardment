@@ -6,7 +6,7 @@ public class DeathParticles : MonoBehaviour
 {
     public ParticleSystem DestructionEffect; //assign prefab in editor or elsewhere
                                              //in code
-    void Explode()
+    public void Explode()
     {
         //Instantiate our one-off particle system
         ParticleSystem explosionEffect = Instantiate(DestructionEffect)
@@ -22,9 +22,5 @@ public class DeathParticles : MonoBehaviour
         Destroy(explosionEffect.gameObject, explosionEffect.duration);
         //destroy our game object
         Destroy(gameObject);
-    }
-    private void OnDestroy()
-    {
-        Explode();
     }
 }

@@ -47,6 +47,7 @@ public class BounceShot : Weapon
         }
         if (collision.gameObject.CompareTag("BossWeakSpot"))
         {
+            collision.gameObject.GetComponent<DeathParticles>().Explode();
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

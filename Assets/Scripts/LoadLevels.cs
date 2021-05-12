@@ -26,6 +26,25 @@ public class LoadLevels : MonoBehaviour
     {
         SceneManager.LoadScene("Level4");
     }
+    public void SelectLevel5() // loads level 5
+    {
+        SceneManager.LoadScene("Level5");
+    }
+
+    public void SelectLevel6() // loads level 6
+    {
+        SceneManager.LoadScene("Level6");
+    }
+
+    public void SelectLevel7() // loads level 7
+    {
+        SceneManager.LoadScene("Level7");
+    }
+
+    public void SelectLevel8() // loads level 8
+    {
+        SceneManager.LoadScene("Level8");
+    }
 
     public void Reloadlevel()// This should be used to reload the current level so the player can retry
     {

@@ -6,6 +6,7 @@ public abstract class Weapon : MonoBehaviour
 {
     protected Rigidbody2D bod;
     public GameObject explosion;
+    public ParticleSystem DestructionEffect;
     public int ammo;
 
     protected abstract void Awake();
@@ -28,6 +29,7 @@ public abstract class Weapon : MonoBehaviour
         //if it hits a boss weakspot
         if (collision.gameObject.CompareTag("BossWeakSpot"))
         {
+            collision.gameObject.GetComponent<DeathParticles>().Explode();
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

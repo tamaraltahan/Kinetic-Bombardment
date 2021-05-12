@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public int currentIndex = 0;
     public GameObject currentWeapon;
 
-    bool isSineShot = false;
+    //bool isSineShot = false;  This is currently not being used
     public GameObject spawnObject; //where bullets come out of
 
     bool isMouseOnUI = false;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         if(spawnObject == null) spawnObject = GameObject.Find("SpawnPt");
         currentWeapon = weaponsList[0];
         bod = GetComponent<Rigidbody2D>(); // set the active body
-        ammoUI = GameObject.Find("Ammo").GetComponent<Text>();
+        ammoUI = GameObject.Find("Ammo").GetComponent<Text>(); // ammo UI
     }
 
 

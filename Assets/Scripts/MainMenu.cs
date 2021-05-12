@@ -8,6 +8,10 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Level1"); //put name of first level here when it is made
+        if (SelectMenu.unlocked < 1)
+        {
+            SelectMenu.unlocked = PlayerPrefs.GetInt("unlocked", 1);
+        }
     }
 
     public void ExitGame()

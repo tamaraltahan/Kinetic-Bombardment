@@ -19,31 +19,37 @@ public class LoadLevels : MonoBehaviour
 
     public void Level3() // loads level 3
     {
-        SceneManager.LoadScene("Level3");
+            SceneManager.LoadScene("Level3");
     }
 
     public void Level4() // loads level 4
     {
-        SceneManager.LoadScene("Level4");
+            SceneManager.LoadScene("Level4");
     }
     public void SelectLevel5() // loads level 5
     {
-        SceneManager.LoadScene("Level5");
+            SceneManager.LoadScene("Level5");
     }
 
     public void SelectLevel6() // loads level 6
     {
-        SceneManager.LoadScene("Level6");
+            SceneManager.LoadScene("Level6");
     }
 
     public void SelectLevel7() // loads level 7
     {
-        SceneManager.LoadScene("Level7");
+            SceneManager.LoadScene("Level7");
     }
 
     public void SelectLevel8() // loads level 8
     {
-        SceneManager.LoadScene("Level8");
+            SceneManager.LoadScene("Level8");
+    }
+
+    public void LevelUnlocked()
+    {
+        SelectMenu.unlocked += 1;
+        Debug.Log(SelectMenu.unlocked);
     }
 
     public void Reloadlevel()// This should be used to reload the current level so the player can retry

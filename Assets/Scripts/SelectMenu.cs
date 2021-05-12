@@ -11,7 +11,7 @@ public class SelectMenu : MonoBehaviour
 
     void start()
     {
-        unlocked = 1;
+       // unlocked = 1;
         //unlocked = PlayerPrefs.GetInt("unlocked", 1);
     }
 
@@ -19,6 +19,11 @@ public class SelectMenu : MonoBehaviour
     public void SelectLevel1()
     {
         SceneManager.LoadScene("Level1");
+        if (unlocked < 1)
+        { 
+            unlocked = PlayerPrefs.GetInt("unlocked", 1); 
+        }
+       
     }
 
     public void SelectLevel2()
